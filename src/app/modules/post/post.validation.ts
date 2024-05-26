@@ -1,0 +1,13 @@
+import { z } from "zod";
+const createPostValidationSchema = z.object({
+  body: z.object({
+    title: z.string().min(2, "Title must be at least 2 characters long"),
+    description: z
+      .string()
+      .min(2, "Description must be at least 2 characters long"),
+  }),
+});
+
+export const postValidations = {
+  createPostValidationSchema,
+};
